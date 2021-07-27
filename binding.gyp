@@ -63,7 +63,25 @@
           'libraries': [
             "<!(pkg-config --libs alsa libcurl)"
           ],
-        }]
+        }],
+        ['OS=="win"', {
+          'configurations': {
+            'Debug': {
+              'msvs_settings': {
+                'VCCLCompilerTool': {
+                  'RuntimeTypeInfo': 'true',
+                },
+              }
+            }, # Debug
+            'Release': {
+              'msvs_settings': {
+                'VCCLCompilerTool': {
+                  'RuntimeTypeInfo': 'true',
+                },
+              },
+            }, # Release
+          }, # configurations
+        }], # OS=="win"
       ]
     }
   ]

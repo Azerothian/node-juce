@@ -15,6 +15,17 @@ NType* JuceTmpl<JType, NType>::NewInstance(const Napi::CallbackInfo& info, JType
 template <typename JType, typename NType>
 Napi::FunctionReference JuceTmpl<JType, NType>::constructor;
 
+
+template <typename JType, typename NType>
+JType* getJUCEObject() {
+  return _juceObject;
+}
+
+template <typename JType, typename NType>
+void setJUCEObject(JType* o) {
+  _juceObject = o;
+}
+
 // template <typename JType, typename NType>
 // Napi::Function JuceTmpl<JType, NType>::DefineClass(Napi::Env env) {
   

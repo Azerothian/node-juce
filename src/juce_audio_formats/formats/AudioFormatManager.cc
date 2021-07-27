@@ -47,12 +47,12 @@ Napi::Value AudioFormatManager::getKnownFormats(const Napi::CallbackInfo& info) 
   Napi::Array retVal = Napi::Array::New(env);
   int numKnownFormats = this->_audioFormatManager->getNumKnownFormats();
   for(int i = 0; i < numKnownFormats; i++) {
-    juce::AudioFormat* itr = this->_audioFormatManager->getKnownFormat(i);
+    juce::WavAudioFormat* itr = reinterpret_cast<juce::WavAudioFormat*>(this->_audioFormatManager->getKnownFormat(i));
       //push into array?
       
-    WavAudioFormat* waf = WavAudioFormat::NewInstance(info, itr);
-    waf->setJUCEObject(itr);
-    retVal.Set(i, waf->Value());
+    // WavAudioFormat* waf = WavAudioFormat::NewInstance(info, itr);
+    // waf->setJUCEObject(itr);
+    // retVal.Set(i, waf->Value());
   }
   // for (itr = this->_audioFormatManager->begin(); itr != this->_audioFormatManager->end(); ++itr) {
 

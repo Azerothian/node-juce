@@ -7,8 +7,8 @@
 #include "../../utils/juce-tmpl.h"
 
 class WavAudioFormat : 
-    public Napi::ObjectWrap<WavAudioFormat>,
-    public JuceTmpl<juce::AudioFormat, WavAudioFormat>
+    public JuceTmpl<juce::WavAudioFormat, WavAudioFormat>,
+    public Napi::ObjectWrap<WavAudioFormat>
 {
 public:
     WavAudioFormat(const Napi::CallbackInfo&);
