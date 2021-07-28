@@ -17,12 +17,12 @@ Napi::FunctionReference JuceTmpl<JType, NType>::constructor;
 
 
 template <typename JType, typename NType>
-JType* getJUCEObject() {
+JType* JuceTmpl<JType, NType>::getJUCEObject() {
   return _juceObject;
 }
 
 template <typename JType, typename NType>
-void setJUCEObject(JType* o) {
+void JuceTmpl<JType, NType>::setJUCEObject(JType* o) {
   _juceObject = o;
 }
 

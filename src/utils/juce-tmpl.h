@@ -7,11 +7,11 @@ class JuceTmpl {
   public:
     JType* getJUCEObject();
     void setJUCEObject(JType*);
+    JType* _juceObject;
 
     static NType* NewInstance(const Napi::CallbackInfo&, JType*);
     // virtual static Napi::Function DefineClass(Napi::Env);
     // static Napi::Function GetClass(Napi::Env);
-    JType* _juceObject;
     static Napi::FunctionReference constructor;
   private:
 };
